@@ -1,0 +1,6 @@
+- name: Veem
+  hosts: All
+#  connection: local
+  become: true
+  roles:
+    - veemFlow

@@ -1,0 +1,36 @@
+---
+
+#- name: Cp
+#  shell: cp tsmFlow/files/requirements.txt /opt/awx_apptsm/requirements.txt
+#  ignore_errors: true
+
+
+ #tasks file for backupFlow
+- name: return motd to registered var
+  shell: /opt/awx_appVeem/bin/pip install -r /opt/awx_appVeem/requirements.txt
+
+
+- name: Run Task SDP-VeeamBackup-DB
+  script: veemFlow/files/Veem/app.py
+  args:
+    executable: /opt/awx_appVeem/bin/python3
+
+- name: Run Task C4VS04DB
+  script: veemFlow/files/Veem/app2.py
+  args:
+    executable: /opt/awx_appVeem/bin/python3
+
+- name: Run Task C4VS03DB
+  script: veemFlow/files/Veem/app3.py
+  args:
+    executable: /opt/awx_appVeem/bin/python3
+
+- name: Run Task C4VEEAMSERV
+  script: veemFlow/files/Veem/app4.py
+  args:
+    executable: /opt/awx_appVeem/bin/python3
+
+- name: Run Task C1VEEAMSERV
+  script: veemFlow/files/Veem/app5.py
+  args:
+    executable: /opt/awx_appVeem/bin/python3
